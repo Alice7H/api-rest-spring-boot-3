@@ -2,7 +2,6 @@ package dio.santander.service.impl;
 
 import java.util.NoSuchElementException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dio.santander.domain.model.User;
@@ -12,7 +11,6 @@ import dio.santander.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-  @Autowired
   private final UserRepository userRepository;
 
   public UserServiceImpl(UserRepository userRepository) {
