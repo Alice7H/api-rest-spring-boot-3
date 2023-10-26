@@ -6,11 +6,12 @@ spring:
   jpa:
     show-sql: true
     open-in-view: false
+    defer-datasource-initialization: true
     hibernate:
       ddl-auto: create #validate | update | create-drop
     properties:
       hibernate:
-        format_sql: true
+        "[format_sql]": true
   h2:
     console:
       enabled: true
@@ -18,3 +19,6 @@ spring:
       settings:
         trace: false
         web-allow-others: false
+  sql:
+    init:
+      mode: always
