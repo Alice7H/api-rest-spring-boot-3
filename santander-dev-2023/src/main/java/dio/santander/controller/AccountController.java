@@ -38,7 +38,6 @@ public record AccountController(AccountService accountService) {
 
   @GetMapping
   @Operation(summary = "Get all accounts", description = "Retrieve a list ofall registered accounts")
-
   @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Operation successful") })
   public ResponseEntity<List<AccountDto>> findAll() {
     var accounts = accountService.findAll();
@@ -51,7 +50,6 @@ public record AccountController(AccountService accountService) {
   @ApiResponses(value = { @ApiResponse(responseCode = "201", description = "Account createdsuccessfully"),
       @ApiResponse(responseCode = "422", description = "Invalid account dataprovided")
   })
-
   public ResponseEntity<AccountDto> create(@RequestBody AccountDto accountDto) {
     var accountCreated = accountService.create(accountDto.toModel());
     URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -67,7 +65,6 @@ public record AccountController(AccountService accountService) {
       @ApiResponse(responseCode = "404", description = "Account not found"),
       @ApiResponse(responseCode = "422", description = "Invalid account dataprovided")
   })
-
   public ResponseEntity<AccountDto> update(@PathVariable Long id, @RequestBody AccountDto accountDto) {
     var acount = accountService.update(id, accountDto.toModel());
     return ResponseEntity.ok(new AccountDto(acount));
@@ -78,7 +75,6 @@ public record AccountController(AccountService accountService) {
   @ApiResponses(value = { @ApiResponse(responseCode = "204", description = "Account deletedsuccessfully"),
       @ApiResponse(responseCode = "404", description = "Account not found")
   })
-
   public ResponseEntity<Void> delete(@PathVariable Long id) {
     accountService.delete(id);
     return ResponseEntity.noContent().build();
