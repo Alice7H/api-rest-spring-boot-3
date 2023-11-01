@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: This is default profile
+  profiles:
+    active: prd
