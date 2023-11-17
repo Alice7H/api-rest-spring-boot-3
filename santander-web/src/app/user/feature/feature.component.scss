@@ -1,0 +1,28 @@
+.card-feature {
+  cursor: pointer;
+  border: 1px solid #c0bebe;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  width: 100px;
+  height: 100px;
+  &-icon {
+    height: 25px;
+    filter: invert(15%) sepia(50%) saturate(13392%) hue-rotate(349deg) brightness(101%) contrast(107%);
+    -webkit-filter: invert(15%) sepia(50%) saturate(13392%) hue-rotate(349deg) brightness(101%) contrast(107%);
+}
+
+  &-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &-icon {
+      background-color: transparent;
+      border: none;
+      color: #E31918;
+    }
+    &-text {
+      color: #929292;
+      margin: 10px auto;
+    }
+  }
+}

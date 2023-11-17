@@ -1,0 +1,22 @@
+<mat-accordion class="balance">
+  <mat-expansion-panel
+  (click)="this.panelChange.emit(this.panelOpenState)"
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span mat-icon-button class="balance-money-icon" aria-label="Icon button with money icon">
+          <mat-icon>attach_money</mat-icon>
+        </span>
+      </mat-panel-title>
+      <mat-panel-description class="balance-description">Saldo disponível </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p class="balance-title">R$ {{account.balance}}</p>
+    <p class="balance-description">Saldo + Limite: R$ {{account.balance + account.limit}}</p>
+    <mat-divider class="balance-divider"></mat-divider>
+    <button mat-button class="balance-show-extract">
+      Ver extrato
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>

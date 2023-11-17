@@ -1,0 +1,28 @@
+<header>
+  <mat-toolbar class="toolbar">
+    <app-side-menu [ngStyle]="{'width': 'max-width.px >== 768px' ? '0px' : 'auto'}"></app-side-menu>
+    <span class="toolbar-logo">
+      <img src="../assets/logo.svg" alt="Logo Santander" class="toolbar-logo__image">
+    </span>
+
+    <input type="text" class="toolbar-search" placeholder="Digite aqui sua busca">
+
+    <div class="toolbar-action">
+      <button mat-icon-button class="toolbar-action__icon" aria-label="Icon button to increase letter">
+        <img src="../../../../assets/letterCap.svg" alt="Increase letter" class="icon-button">
+      </button>
+      <button mat-icon-button class="toolbar-action__icon" aria-label="Icon button to decrease letter">
+        <img src="../../../../assets/letterLow.svg" alt="Decrease letter" class="icon-button">
+      </button>
+      <button mat-icon-button class="toolbar-action__icon" aria-label="Redirect to common questions">
+        <img src="../../../../assets/question.svg" alt="Questions" class="icon-button">
+      </button>
+      <button mat-icon-button class="toolbar-action__icon toolbar-action__notification" aria-label="Icon button with notifications">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button class="toolbar-action__icon" aria-label="Icon button to setting profile">
+        <img src="../../../../assets/user.svg" alt="Avatar" class="icon-button">
+      </button>
+    </div>
+  </mat-toolbar>
+</header>

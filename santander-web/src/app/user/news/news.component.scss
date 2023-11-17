@@ -1,0 +1,38 @@
+$layout-breakpoint-small: 768px;
+
+.news {
+  border: 1px solid #c0bebe;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 90vw;
+  margin: 0 auto;
+  &-icon{
+    width: 30px;
+    filter: invert(15%) sepia(50%) saturate(13392%) hue-rotate(349deg) brightness(101%) contrast(107%);
+    -webkit-filter: invert(15%) sepia(50%) saturate(13392%) hue-rotate(349deg) brightness(101%) contrast(107%);
+    color: #E31918;
+  }
+  &-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &-icon {
+      width: 50px;
+      background-color: transparent;
+      border: none;
+      color: #E31918;
+    }
+    &-description {
+      flex: 1;
+      color: #616161;
+      font-size: 14px;
+      margin: 10px auto;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-small) {
+  .news {
+    display: none;
+    width: 0px;
+  }
+}

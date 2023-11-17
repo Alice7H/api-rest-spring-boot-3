@@ -1,0 +1,16 @@
+<mat-accordion class="card-info">
+  <mat-expansion-panel
+  (opened)="panel2OpenState = true"
+  (closed)="panel2OpenState = false"
+  class="card-info-expansion-panel"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title class="card-info-title">
+        Cartão final {{cardNumber}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="card-info-content">
+      <p>show/hide something</p>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

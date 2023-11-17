@@ -1,0 +1,32 @@
+<button mat-icon-button [matMenuTriggerFor]="mainMenu" class="menu-icon" aria-label="Icon button with menu icon">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<mat-menu #mainMenu="matMenu" xPosition="after">
+  <div class="header-side-menu">
+    <button aria-label="Icon button to increase letter">
+      <img src="../../../../../assets/letterCap.svg" alt="Increase letter" class="icon-button">
+      Aumentar letra
+    </button>
+
+    <button aria-label="Icon button to decrease letter">
+      <img src="../../../../../assets/letterLow.svg" alt="Decrease letter" class="icon-button">
+      Diminuir letra
+    </button>
+
+    <button aria-label="Redirect to common questions">
+      <img src="../../../../../assets/question.svg" alt="Questions" class="icon-button">
+      Perguntas Frequentes
+    </button>
+
+    <button aria-label="Icon button with notifications">
+      <mat-icon>notifications</mat-icon>
+      Notificações
+    </button>
+
+    <button aria-label="Icon button to setting profile">
+      <img src="../../../../../assets/user.svg" alt="Avatar" class="icon-button-profile">
+      Perfil
+    </button>
+  </div>
+</mat-menu>

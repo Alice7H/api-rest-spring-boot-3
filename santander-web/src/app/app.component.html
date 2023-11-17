@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<main>
+  <div class="side-menu">
+    <app-menu-item contentText="Home" iconName="home"/>
+    <app-menu-item contentText="Conta corrente" iconName="paid"/>
+    <app-menu-item contentText="Transferências" iconName="sync_alt"/>
+    <app-menu-item contentText="Pagamentos" iconName="qr_code"/>
+    <app-menu-item contentText="Cartões" iconName="credit_card"/>
+    <app-menu-item contentText="Empréstimos" iconName="real_estate_agent"/>
+    <app-menu-item contentText="Outros" iconName="more_horiz"/>
+  </div>
+  <div class="account">
+    <div class="welcome" *ngIf="users$ | async as users; else welcome">
+      <h1>Olá, {{users[0].name}} </h1>
+      <div class="welcome-content">
+        <p>Ag {{users[0].account.agency}}</p>
+        <p>Cc {{users[0].account.number}}</p>
+      </div>
+    </div>
+    <ng-template #welcome>
+      <div class="welcome">
+        <h1>Olá, %Name</h1>
+        <div class="welcome-content">
+          <p>Ag 0000 </p>
+          <p>Cc 00000000-0</p>
+        </div>
+      </div>
+    </ng-template>
+    <mat-divider class="account-divider"></mat-divider>
+    <div class="actions" *ngIf="users$ | async as users; else actions">
+
+      <app-balance [panelOpenState]="panelBalanceState"
+      (panelChange)="handleChangedPanelState($event)"
+      [account]="users[0].account"></app-balance>
+
+      <div class="features" [ngStyle]="panelBalanceState ? {'margin-top':'230px'} : {'margin-top': '20px'}">
+        <app-feature *ngFor="let feature of users[0].features"
+        [contentText]="feature.description"
+        [iconName]="feature.icon"
+        />
+      </div>
+
+      <app-card [panel2OpenState]="false" cardNumber="{{users[0].card.number.substring(users[0].card.number.length - 4)}}"></app-card>
+
+      <div class="notices">
+        <app-news *ngFor="let notice of users[0].news" [title]="notice.description" [iconName]="notice.icon"></app-news>
+      </div>
+
+      <mat-card class="stepper-payment"></mat-card>
+    </div>
+
+    <ng-template #actions>
+      <div class="actions">
+        <app-balance [panelOpenState]="panelBalanceState" (panelChange)="handleChangedPanelState($event)"></app-balance>
+        <div class="features" [ngStyle]="panelBalanceState ? {'margin-top':'230px'} : {'margin-top': '20px'}">
+          <app-feature contentText="PIX" iconName="pix"/>
+          <app-feature contentText="Pagar" iconName="qr_code"/>
+          <app-feature contentText="Transferir" iconName="mobile_screen_share"/>
+          <app-feature contentText="Conta corrente" iconName="account_balance"/>
+          <app-feature contentText="Cartões" iconName="credit_card"/>
+        </div>
+        <app-card [panel2OpenState]="false"></app-card>
+        <div class="notices">
+          <app-news title="O Santander tem soluções de crédito sob medida pra você. Confira!"
+            iconName="savings"></app-news>
+          <app-news
+            title="Santander Seguro Casa, seu faz-tudo. Mais de 50 serviços pra você. Confira."
+            iconName="construction"></app-news>
+        </div>
+        <mat-card class="stepper-payment"></mat-card>
+      </div>
+    </ng-template>
+
+    <div class="payment">
+      <app-panel title="Escolher cartão"></app-panel>
+      <app-panel title="Opção de Pagamento"></app-panel>
+      <app-panel title="Data pagamento"></app-panel>
+    </div>
+  </div>
+</main>

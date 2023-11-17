@@ -1,0 +1,12 @@
+.menu-item {
+  background-color: #F0F0F0;
+  color: #666666;
+  cursor: pointer;
+  font-size: 16px;
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

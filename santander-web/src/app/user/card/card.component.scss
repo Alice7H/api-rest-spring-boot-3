@@ -1,0 +1,22 @@
+$layout-breakpoint-small: 768px;
+
+.card-info {
+  margin: 20px auto;
+  .mat-expansion-panel {
+    background-color: #E31918;
+    margin: 20px;
+  }
+  &-title, &-content {
+    color: white;
+  }
+}
+
+@media (min-width: $layout-breakpoint-small) {
+  .card-info {
+    margin: 0px auto;
+    .mat-expansion-panel {
+      margin: 0px auto;
+      width: auto;
+    }
+  }
+}

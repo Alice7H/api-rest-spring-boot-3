@@ -1,0 +1,41 @@
+$layout-breakpoint-small: 768px;
+
+.menu-icon {
+  display: block;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+.header-side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  button {
+    background-color: transparent;
+    border: none;
+    color: #929292;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    .icon-button {
+      width: 25px;
+      filter: invert(60%) sepia(25%) saturate(12%) hue-rotate(322deg) brightness(92%) contrast(93%);
+      -webkit-filter: invert(60%) sepia(25%) saturate(12%) hue-rotate(322deg) brightness(92%) contrast(93%);
+    }
+    .icon-button-profile {
+      width: 25px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-small) {
+  .menu-icon {
+    display: none;
+    width: 0px;
+  }
+}

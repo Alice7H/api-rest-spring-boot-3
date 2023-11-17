@@ -1,0 +1,9 @@
+<mat-card class="card-feature">
+  <mat-card-content class="card-feature-content">
+    <span mat-icon-button class="card-feature-content-icon" aria-label="Icon to see a feature">
+      <mat-icon *ngIf="iconName.length < 20">{{iconName}}</mat-icon>
+      <img *ngIf="iconName.length > 20" class="card-feature-icon" src={{iconName}} alt="{{contentText}}"/>
+    </span>
+    <p class="card-feature-content-text">{{contentText}}</p>
+  </mat-card-content>
+</mat-card>

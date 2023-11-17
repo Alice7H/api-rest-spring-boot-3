@@ -1,0 +1,9 @@
+<mat-card class="news">
+  <mat-card-content class="news-content">
+    <span class="news-content-icon" mat-icon-button aria-label="Illustration icon with notice">
+      <mat-icon *ngIf="iconName.length < 20">{{iconName}}</mat-icon>
+      <img *ngIf="iconName.length > 20" class="news-icon" src={{iconName}} alt="Illustration icon with notice"/>
+    </span>
+    <p class="news-content-description">{{title}}</p>
+  </mat-card-content>
+</mat-card>
